@@ -2,14 +2,12 @@ package com.epam.methodlog.aspect;
 
 import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.JoinPoint;
-import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component
 @RequiredArgsConstructor
 public class AspectMethodParametersLookup {
 

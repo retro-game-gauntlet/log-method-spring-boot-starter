@@ -9,13 +9,11 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
-import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 import java.util.Map;
 
 @Aspect
-@Component
 @RequiredArgsConstructor
 public class InputMethodLogAspect {
 

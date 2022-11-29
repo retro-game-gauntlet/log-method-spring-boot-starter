@@ -2,11 +2,9 @@ package com.epam.methodlog.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 
-@Component
 public class AspectMethodLookup {
 
     public Method lookup(JoinPoint jp) {
