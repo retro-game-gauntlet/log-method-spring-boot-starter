@@ -10,10 +10,12 @@ import com.epam.methodlog.utils.formatter.StringFormatter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import java.util.Map;
 
 @Configuration
+@EnableAspectJAutoProxy
 public class MethodLogAutoConfig {
 
     @Bean
