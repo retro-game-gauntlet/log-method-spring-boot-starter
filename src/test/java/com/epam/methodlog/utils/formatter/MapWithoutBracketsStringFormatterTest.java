@@ -23,4 +23,11 @@ class MapWithoutBracketsStringFormatterTest {
 
         assertThat(result).isEqualTo("1=One");
     }
+
+    @Test
+    void shouldReturnEmptyStringWhenMapIsEmpty() {
+        String result = formatter.format(Map.of());
+
+        assertThat(result).isEmpty();
+    }
 }
