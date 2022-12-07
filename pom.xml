@@ -57,5 +57,11 @@
             </plugin>
         </plugins>
     </build>
-
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/retro-game-gauntlet/log-method-spring-boot-starter</url>
+        </repository>
+    </distributionManagement>
 </project>
