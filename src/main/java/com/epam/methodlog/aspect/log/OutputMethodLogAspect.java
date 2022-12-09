@@ -1,7 +1,6 @@
 package com.epam.methodlog.aspect.log;
 
 import com.epam.methodlog.aspect.AspectMethodLookup;
-import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
@@ -11,11 +10,15 @@ import org.slf4j.Logger;
 import java.lang.reflect.Method;
 
 @Aspect
-@RequiredArgsConstructor
 public class OutputMethodLogAspect {
 
     private final AspectMethodLookup aspectMethodLookup;
     private final AspectLoggerLookup aspectLoggerLookup;
+
+    public OutputMethodLogAspect(AspectMethodLookup aspectMethodLookup, AspectLoggerLookup aspectLoggerLookup) {
+        this.aspectMethodLookup = aspectMethodLookup;
+        this.aspectLoggerLookup = aspectLoggerLookup;
+    }
 
     @Pointcut("@annotation(com.epam.methodlog.annotation.OutputMethodLog)")
     public void anyMethodAnnotatedWithOutputMethodLog() {
