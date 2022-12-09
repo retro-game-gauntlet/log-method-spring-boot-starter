@@ -19,26 +19,23 @@ import java.util.Map;
 public class MethodLogAutoConfig {
 
     @Bean
-    @ConditionalOnMissingBean
     public AspectMethodLookup aspectMethodLookup() {
         return new AspectMethodLookup();
     }
 
     @Bean
-    @ConditionalOnMissingBean
     public AspectMethodParametersLookup aspectMethodParametersLookup(AspectMethodLookup aspectMethodLookup) {
         return new AspectMethodParametersLookup(aspectMethodLookup);
     }
 
     @Bean
-    @ConditionalOnMissingBean
     public AspectLoggerLookup aspectLoggerLookup() {
         return new AspectLoggerLookup();
     }
 
     @Bean
-    @ConditionalOnMissingBean
-    public StringFormatter<Map<String, Object>> stringFormatter() {
+    @ConditionalOnMissingBean(value = StringFormatter.class, name = "mapStringFormatter")
+    public StringFormatter<Map<String, Object>> mapStringFormatter() {
         return new MapWithoutBracketsStringFormatter<>();
     }
 

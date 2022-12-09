@@ -19,7 +19,7 @@ public class InputMethodLogAspect {
 
     private final AspectMethodLookup aspectMethodLookup;
     private final AspectMethodParametersLookup aspectMethodParametersLookup;
-    private final StringFormatter<Map<String, Object>> stringFormatter;
+    private final StringFormatter<Map<String, Object>> mapStringFormatter;
     private final AspectLoggerLookup aspectLoggerLookup;
 
     @Pointcut("@annotation(com.epam.methodlog.annotation.InputMethodLog)")
@@ -30,7 +30,7 @@ public class InputMethodLogAspect {
     @Before(value = "anyMethodAnnotatedWithInputMethodLog()")
     public void logMethod(JoinPoint jp) {
         Map<String, Object> args = aspectMethodParametersLookup.lookup(jp);
-        String parameters = stringFormatter.format(args);
+        String parameters = mapStringFormatter.format(args);
         Method method = aspectMethodLookup.lookup(jp);
         Logger logger = aspectLoggerLookup.lookup(jp);
         logger.info("Method: '{}' was called with parameters: {}", method.getName(), parameters);
